@@ -760,13 +760,13 @@ export default class VideoPlayer extends Component {
     let currentTime = this.state.currentTimeInDeciSeconds;
     let subtitleIndex = this.state.subtitleIndex;
     let subtitles = this.props.subtitle;
-    if (!subtitles[subtitleIndex])
+    if (!subtitles[subtitleIndex] || !subtitles[subtitleIndex].start_time || !subtitles[subtitleIndex].end_time)
       return null;
     let startTime = this.parseTimeStringToDeciSecond(
-      subtitles[subtitleIndex].startTime
+      subtitles[subtitleIndex].start_time
     );
     let endTime = this.parseTimeStringToDeciSecond(
-      subtitles[subtitleIndex].endTime
+      subtitles[subtitleIndex].end_time
     );
     if (currentTime > endTime)
       this.setState({ subtitleIndex: subtitleIndex + 1 });
