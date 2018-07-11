@@ -1074,9 +1074,8 @@ export default class VideoPlayer extends Component {
     return (
       <View
         style={
-          this.props.isFullscreen
-            ? styles.player.subtitleContainerLandscape
-            : styles.player.subtitleContainerPortrait
+          styles.player.subtitleContainerLandscape
+          // this.props.isFullscreen ? styles.player.subtitleContainerLandscape : styles.player.subtitleContainerPortrait
         }>
         <Text style={styles.player.subtitle}>{this.showSubtitle()}</Text>
       </View>
